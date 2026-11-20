@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nikolay | Le Cercle de la Cascade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pierre: #172123;
+    --pierre-2: #1f2c2e;
+    --pierre-3: #26363a;
+    --ecume: #e7ebe5;
+    --brume: #a7b3ad;
+    --laiton: #c4a46e;
+    --mousse: #6f8c7c;
+    --serif: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --sans: "Jost", "Futura", "Avenir Next", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--pierre);
+    color: var(--ecume);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  /* ---------- Le haut de page : la cascade ---------- */
+
+  .hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 1.25rem 3rem;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .falls {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: repeating-linear-gradient(180deg,
+      rgba(196, 164, 110, 0) 0,
+      rgba(196, 164, 110, 0.62) 46px,
+      rgba(231, 235, 229, 0.28) 70px,
+      rgba(196, 164, 110, 0) 150px);
+    background-size: 100% 300px;
+    -webkit-mask-image: repeating-linear-gradient(90deg,
+      transparent 0 21px, #000 21px 22px, transparent 22px 37px, #000 37px 38px, transparent 38px 61px);
+            mask-image: repeating-linear-gradient(90deg,
+      transparent 0 21px, #000 21px 22px, transparent 22px 37px, #000 37px 38px, transparent 38px 61px);
+    animation: tombe 4.5s linear infinite;
+    opacity: 0.85;
+  }
+
+  .falls::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(23, 33, 35, 0.15) 0%, rgba(23, 33, 35, 0.55) 45%, var(--pierre) 92%);
+  }
+
+  @keyframes tombe {
+    from { background-position: 0 0; }
+    to   { background-position: 0 300px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .falls { animation: none; }
+  }
+
+  .seal {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.25rem;
+    width: 84px;
+    height: 84px;
+    color: var(--laiton);
+  }
+
+  .cercle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.125rem;
+    color: var(--laiton);
+    margin: 0 0 0.5rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(3.1rem, 15vw, 6.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .role {
+    font-size: 1.125rem;
+    margin: 0 0 1.75rem;
+    max-width: 26rem;
+  }
+
+  .soiree {
+    margin: 0;
+    padding-left: 0.9rem;
+    border-left: 1px solid var(--laiton);
+    color: var(--brume);
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+
+  .soiree strong { color: var(--ecume); font-weight: 500; }
+
+  /* ---------- Le corps du dossier ---------- */
+
+  main {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 4rem;
+  }
+
+  .avertissement {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--laiton);
+    margin: 0 0 3rem;
+  }
+
+  section { margin: 0 0 3.25rem; }
+
+  section > h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 1.1rem;
+    padding-top: 1.1rem;
+    position: relative;
+  }
+
+  section > h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 1px;
+    background: var(--laiton);
+  }
+
+  p { margin: 0 0 1rem; }
+
+  strong { font-weight: 500; }
+
+  .citation {
+    margin: 1.25rem 0;
+    padding: 0.2rem 0 0.2rem 1rem;
+    border-left: 2px solid var(--laiton);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .citation p:last-child { margin-bottom: 0; }
+
+  /* Les membres */
+  .membres {
+    list-style: none;
+    margin: 1.5rem 0 1rem;
+    padding: 0;
+  }
+
+  .membres li {
+    display: grid;
+    grid-template-columns: 7.2rem 1fr;
+    gap: 0.75rem;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--pierre-3);
+  }
+
+  .membres li:last-child { border-bottom: 1px solid var(--pierre-3); }
+
+  .membres .nom {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .membres .qui { color: var(--brume); font-size: 0.98rem; line-height: 1.5; }
+
+  .membres li.toi .nom { color: var(--laiton); }
+
+  .membres li.absent .nom { font-style: italic; color: var(--brume); }
+
+  .couples { color: var(--brume); font-size: 0.98rem; }
+
+  /* Les scellés */
+  details.scelle {
+    background: var(--pierre-2);
+    border: 1px solid rgba(196, 164, 110, 0.55);
+    border-radius: 2px;
+    margin: 0 0 3.25rem;
+  }
+
+  details.scelle > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.1rem;
+  }
+
+  details.scelle > summary::-webkit-details-marker { display: none; }
+
+  details.scelle > summary:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--laiton);
+    outline-offset: 3px;
+  }
+
+  .cachet {
+    flex: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #d9bd8a, var(--laiton) 45%, #8f7346);
+    color: var(--pierre);
+    display: grid;
+    place-items: center;
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    transition: transform 0.4s ease;
+  }
+
+  details.scelle[open] .cachet { transform: rotate(-24deg) scale(0.92); }
+
+  .titre-scelle {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    display: block;
+  }
+
+  .consigne {
+    display: block;
+    color: var(--brume);
+    font-size: 0.92rem;
+    margin-top: 0.15rem;
+  }
+
+  details.scelle[open] .consigne { visibility: hidden; }
+
+  .contenu-scelle { padding: 0 1.1rem 0.6rem; }
+
+  /* Listes simples */
+  .liste {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+  }
+
+  .liste li { margin-bottom: 0.6rem; padding-left: 0.2rem; }
+
+  .liste li::marker { color: var(--laiton); }
+
+  .regles li::marker { font-family: var(--serif); }
+
+  /* Les points */
+  .points {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+  }
+
+  .points td {
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--pierre-3);
+    vertical-align: top;
+  }
+
+  .points tr:last-child td { border-bottom: 1px solid var(--pierre-3); }
+
+  .points td:last-child {
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 1rem;
+    font-family: var(--serif);
+    color: var(--laiton);
+    font-size: 1.1rem;
+  }
+
+  footer {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 3rem;
+    color: var(--mousse);
+    font-family: var(--serif);
+    font-style: italic;
+  }
+
+  /* ---------- Impression ---------- */
+
+  @media print {
+    @page { margin: 16mm 15mm; }
+    body { background: #fff; color: #111; font-size: 11pt; line-height: 1.5; }
+    .falls, .seal { display: none; }
+    .hero { min-height: 0; padding: 0 0 6mm; }
+    h1 { font-size: 36pt; color: #111; margin-bottom: 3mm; }
+    .cercle, .avertissement, footer { color: #555; }
+    .role { margin-bottom: 4mm; }
+    .soiree { color: #333; border-color: #999; }
+    .soiree strong { color: #111; }
+    main, footer { max-width: none; padding: 0; }
+    .avertissement { margin-bottom: 8mm; }
+    section, details.scelle { margin-bottom: 7mm; }
+    section > h2, .titre-scelle { break-after: avoid; }
+    .membres li, .liste li, .points tr, .citation, details.scelle p { break-inside: avoid; }
+    section > h2::before { background: #999; }
+    .citation { border-color: #999; }
+    details.scelle { background: none; border: 1px solid #999; }
+    .cachet { display: none; }
+    .consigne { display: none; }
+    .membres li, .membres li:last-child, .points td, .points tr:last-child td { border-color: #ccc; }
+    .membres .qui, .couples { color: #444; }
+    .membres li.toi .nom, .points td:last-child { color: #111; }
+    .liste li::marker { color: #555; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="falls" aria-hidden="true"></div>
+
+  <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+    <defs>
+      <path id="tour" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/>
+    </defs>
+    <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.8"/>
+    <circle cx="50" cy="50" r="27" fill="none" stroke="currentColor" stroke-width="0.6"/>
+    <text font-family="Bodoni Moda, Georgia, serif" font-size="8" fill="currentColor">
+      <textPath href="#tour" textLength="226" lengthAdjust="spacing">LE CERCLE DE LA CASCADE ✦ CERCLE PRIVÉ ✦</textPath>
+    </text>
+    <text x="50" y="61" text-anchor="middle" font-family="Bodoni Moda, Georgia, serif" font-size="31" fill="currentColor">C</text>
+  </svg>
+
+  <p class="cercle">Le Cercle de la Cascade</p>
+  <h1>Nikolay</h1>
+  <p class="role">Chanteur des Dérives</p>
+  <p class="soiree">
+    <strong>Samedi 5 décembre, 19h30</strong><br>
+    La Cascade, Vandenesse-en-Auxois<br>
+    Tenue de soirée chic
+  </p>
+</header>
+
+<main>
+
+  <p class="avertissement">Ce dossier est à toi seul. Ne le montre à personne, pas même à Manon.</p>
+
+  <section>
+    <h2>Qui tu es</h2>
+    <p>Tu chantes dans les Dérives. Il y a huit ans, «&nbsp;Les Heures creuses&nbsp;» a fait le tour du pays, et elle tourne encore&nbsp;: c'est elle qui paie ta maison, ta place au cercle et tes soirées. Le groupe n'a jamais retrouvé un tel succès.</p>
+    <p>Manon, ta compagne, est l'avocate du cercle. Elle porte Origine avec Margaux et Agathe, et tu y crois dur comme fer.</p>
+  </section>
+
+  <section>
+    <h2>Le cercle</h2>
+    <p>Onze membres, tous fortunés, tous ambitieux. Chaque samedi soir, l'un d'eux présente un projet, et le fonds commun décide d'y investir ou non. Pour entrer, chacun a versé 300&nbsp;000&nbsp;€.</p>
+    <p>Depuis 2021, le fonds a financé une quinzaine de projets. Certains ont rapporté gros, comme un domaine viticole de la Côte de Nuits&nbsp;; d'autres beaucoup moins, comme une application de location de yachts&nbsp;; quelques-uns attendent encore une décision. Parmi les derniers financés&nbsp;: la rénovation de la salle panoramique de Jean-Charles, en 2024, pour 600&nbsp;000&nbsp;€, en échange du droit de s'y réunir à vie, et Origine, la marque d'hydromel pétillant de Margaux, Manon et Agathe, pour 800&nbsp;000&nbsp;€. Aujourd'hui, il reste 1,9&nbsp;M€ dans les caisses.</p>
+    <p>Théo Delmas en est le trésorier. Avant que le cercle mette un euro quelque part, Théo vérifie tout. Tout le monde l'apprécie, et tout le monde le craint un peu. Le samedi 5 décembre, il présentera au cercle son audit du fonds.</p>
+    <ul class="membres">
+      <li><span class="nom">Jean-Charles</span><span class="qui">Propriétaire de La Cascade, président du cercle</span></li>
+      <li><span class="nom">Théo Delmas</span><span class="qui">Trésorier du cercle</span></li>
+      <li><span class="nom">Lucile</span><span class="qui">Gère les réservations de La Cascade</span></li>
+      <li><span class="nom">Amaury</span><span class="qui">Dirige Maison Arvel, rénovation de demeures de prestige</span></li>
+      <li><span class="nom">Evann</span><span class="qui">Commercial chez Maison Arvel</span></li>
+      <li><span class="nom">Margaux</span><span class="qui">Consultante, cofondatrice d'Origine</span></li>
+      <li><span class="nom">Manon</span><span class="qui">Avocate d'affaires, conseil du cercle</span></li>
+      <li><span class="nom">Agathe</span><span class="qui">Créatrice des recettes d'Origine</span></li>
+      <li><span class="nom">Léa</span><span class="qui">Chasseuse de biens de prestige</span></li>
+      <li class="toi"><span class="nom">Nikolay</span><span class="qui">Toi. Chanteur des Dérives, son groupe, dont le tube «&nbsp;Les Heures creuses&nbsp;» a fait la fortune</span></li>
+      <li><span class="nom">Emma</span><span class="qui">Marketing digital, s'occupe de l'image des Dérives</span></li>
+    </ul>
+    <p class="couples">Dans la vie comme au cercle&nbsp;: Emma et Amaury, Margaux et Evann, Jean-Charles et Lucile, et toi avec Manon.</p>
+  </section>
+
+  <details class="scelle">
+    <summary>
+      <span class="cachet" aria-hidden="true">C</span>
+      <span><span class="titre-scelle">Ton secret</span><span class="consigne">Touche pour briser le scellé</span></span>
+    </summary>
+    <div class="contenu-scelle">
+      <p>«&nbsp;Les Heures creuses&nbsp;», ce n'est pas toi qui l'as écrite. C'est Théo, il y a huit ans, un hiver, dans l'appartement que vous partagiez. Tu l'as déposée seul à la Sacem, sur les conseils d'Emma. Depuis, elle t'a tout donné.</p>
+      <p>Le 20 novembre, l'avocat de Théo t'a envoyé une mise en demeure&nbsp;: il réclame 1,2&nbsp;M€ de droits. Huit ans de silence, et maintenant ça.</p>
+      <p>Emma et toi, vous êtes une équipe. Manon ne sait rien.</p>
+    </div>
+  </details>
+
+  <section>
+    <h2>Tes missions</h2>
+    <ul class="liste">
+      <li>Protéger les Dérives&nbsp;: personne ne doit savoir qui a écrit «&nbsp;Les Heures creuses&nbsp;».</li>
+      <li>Faire renoncer Théo à sa mise en demeure.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>D'ici la soirée</h2>
+    <p>Ce dossier dit qui tu es et ce que tu caches, à ce jour. Il sera complété avant la soirée, sur ce même lien&nbsp;: garde-le précieusement. Les règles du jeu et les points arriveront avec la suite.</p>
+    <p>D'ici là, garde tout ça pour toi. Sur le groupe «&nbsp;Le Cercle&nbsp;», tu peux réagir en restant dans ton rôle, sans rien dévoiler de ton secret.</p>
+  </section>
+
+</main>
+
+<footer>Le Cercle de la Cascade. Cercle privé, dossier strictement personnel.</footer>
+
+<script>
+  window.addEventListener("beforeprint", function () {
+    document.querySelectorAll("details").forEach(function (d) { d.open = true; });
+  });
+</script>
+</body>
+</html>
